@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",Roboto,'Roboto light',utm,
+  sans-serif, Lato;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+#root{
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", Roboto,'Roboto light',
+    monospace;
+}
+/* Roboto */
+@font-face{
+  font-family: Roboto;
+  src: url(./Assets/fonts/Roboto-Medium.ttf)
+}
+@font-face{
+  font-family: 'Roboto light';
+  src: url(./Assets/fonts/Roboto-Light.ttf)
+}
+/* UTM-Avo */
+@font-face{
+  font-family: utm;
+  src: url(./Assets/fonts/utm-avo.ttf)
+}
+/* Lato-medium */
+@font-face{
+  font-family: Lato;
+  src: url(./Assets/fonts/Lato-Medium.ttf)
+}
