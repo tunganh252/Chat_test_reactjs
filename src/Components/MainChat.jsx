@@ -6,6 +6,7 @@ import InfoChat from './../Components/InfoChat'
 import { listContact } from './../Data/Data';
 
 
+
 const MainChatContainer = styled.div`
   width:100%;
   height:84% ;
@@ -36,7 +37,7 @@ callBackDataContact = (index)=>{
 callBackMessenger = (mess) => {
   let itemObj = {
     content: mess,
-    timeSend: '20:18 PM',
+    timeSend: '20:42 PM',
     type: 1
   }
 
@@ -49,17 +50,20 @@ callBackMessenger = (mess) => {
 
   render() {
     return (
+
         <MainChatContainer>
           <ListContact  listContact= {this.listContact.dataContact} 
              callBackDataContact = {this.callBackDataContact}
              dataUpdate ={this.state.listContact}
-          />
+             />
           <ListChat
             listChat={this.state.listContact.listChat}
             dataUpdate={this.state.listContact}
             callBackMessenger={this.callBackMessenger}
             />
-          <InfoChat/>
+            <InfoChat 
+            dataUpdate={this.state.listContact}
+            />
         </MainChatContainer>
     )
   }

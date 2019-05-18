@@ -14,8 +14,9 @@ import ava_user5 from './../Assets/images/img1.jpg'
 
 export const listContact = [
     {
-        name: 'Justin Timberlake',
+        name: 'Justin Nguyen',
         userName: '@justin',
+        id: 2016518484521,
         content: 'Wait for minutes',
         time: '3 mins',
         timeActive: 'Last seen 3 hours ago',
@@ -39,8 +40,9 @@ export const listContact = [
         ]
     },
     {
-        name: 'Alex Nguyen',
+        name: 'Captain America',
         userName: '@alex',
+        id: 6478441515151,
         content: 'Oke ',
         time: '47 mins',
         timeActive: 'Last seen 12 minutes ago',
@@ -64,8 +66,9 @@ export const listContact = [
         ]
     },
     {
-        name: 'John Carton',
+        name: 'Chris Hemsworth',
         userName: '@carton',
+        id: 411984873181,
         content: 'Thank you for dinner last night',
         time: '5 hr',
         timeActive: 'Last seen 3 hours ago',
@@ -86,6 +89,7 @@ export const listContact = [
     {
         name: 'Lucy Nguyen',
         userName: '@lucynguyen',
+        id: 15491031648,
         time: '18 mins',
         content: 'I like that',
         timeActive: 'Last active 1 hourse',
@@ -104,8 +108,9 @@ export const listContact = [
         ]
     },
     {
-        name: 'Lê Quốc Khang',
+        name: 'Iron Man',
         userName: '@khangle',
+        id: 102648498415,
         time: '3 hr',
         content: 'Hey man',
         timeActive: 'Online',
@@ -122,33 +127,125 @@ export const listContact = [
                 type: 1
             },
         ]
-    }
+    },
+    {
+        name: 'Iron Man',
+        userName: '@khangle',
+        id: 102648498415,
+        time: '3 hr',
+        content: 'Hey man',
+        timeActive: 'Online',
+        isOnline: true,
+        img: ava_user5,
+        listChat: [{
+                content: 'What the fuck',
+                timeSend: '14:26 PM',
+                type: 1
+            },
+            {
+                content: 'Are you kiding me ?',
+                timeSend: '14:26 PM',
+                type: 1
+            },
+        ]
+    },
+    {
+        name: 'Iron Man',
+        userName: '@khangle',
+        id: 102648498415,
+        time: '3 hr',
+        content: 'Hey man',
+        timeActive: 'Online',
+        isOnline: true,
+        img: ava_user5,
+        listChat: [{
+                content: 'What the fuck',
+                timeSend: '14:26 PM',
+                type: 1
+            },
+            {
+                content: 'Are you kiding me ?',
+                timeSend: '14:26 PM',
+                type: 1
+            },
+        ]
+    },
+    {
+        name: 'Iron Man',
+        userName: '@khangle',
+        id: 102648498415,
+        time: '3 hr',
+        content: 'Hey man',
+        timeActive: 'Online',
+        isOnline: true,
+        img: ava_user5,
+        listChat: [{
+                content: 'What the fuck',
+                timeSend: '14:26 PM',
+                type: 1
+            },
+            {
+                content: 'Are you kiding me ?',
+                timeSend: '14:26 PM',
+                type: 1
+            },
+        ]
+    },
+    {
+        name: 'Iron Man',
+        userName: '@khangle',
+        id: 102648498415,
+        time: '3 hr',
+        content: 'Hey man',
+        timeActive: 'Online',
+        isOnline: true,
+        img: ava_user5,
+        listChat: [{
+                content: 'What the fuck',
+                timeSend: '14:26 PM',
+                type: 1
+            },
+            {
+                content: 'Are you kiding me ?',
+                timeSend: '14:26 PM',
+                type: 1
+            },
+        ]
+    },
 ]
 
 
 
 export const dataMenu = [{
         title: 'Home',
-        ic: ic_home
+        ic: ic_home,
+        url: '/home'
     },
     {
         title: 'Money Tranfers',
-        ic: ic_money
+        ic: ic_money,
+        url: '/transfer'
     },
     {
         title: 'Send or Request Money with',
-        ic: ic_wee
+        ic: ic_wee,
+
     },
     {
         title: 'Payment',
-        ic: ic_payment
+        ic: ic_payment,
+        url: '/payment'
+
     },
     {
         title: 'Products Services',
-        ic: ic_product
+        ic: ic_product,
+        url: '/product'
     },
     {
         title: 'Chat',
-        ic: ic_chat
+        ic: ic_chat,
+        url: '/chat'
+
     },
 ]

@@ -7,7 +7,6 @@ import img_smile from "./../Assets/images/ic_smile.svg";
 
 const ListChatContainer = styled.div`
   width: 100%;
-  height: 100%;
   overflow: hidden;
   background-color: #fff;
   .statusUser {
@@ -68,7 +67,6 @@ const ListChatContainer = styled.div`
         .ovalOnline {
           width: 4px;
           height: 4px;
-          opacity: 0.5;
           background-color: #001654;
           margin: 0 10px;
           border-radius: 50%;
@@ -92,8 +90,9 @@ const ListChatContainer = styled.div`
     }
   }
   .contentChat {
-    width: 100%;
+    width: 98%;
     height: 77%;
+    overflow: scroll;
     box-shadow: inset 0.5px 0 0 0 #d0d4da;
     .rowMessenger {
       display: flex;
@@ -179,6 +178,21 @@ const ListChatContainer = styled.div`
       right: 13%;
     }
   }
+  /* Custom Scroll content Chat */
+  #customScroll::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  #customScroll::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+  }
+
+  #customScroll::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(76deg, #f98153, #f45112);
+    border-radius: 5px;
+    /* background-color: transparent */
+  }
 `;
 export default class ListChat extends Component {
   state = {
@@ -191,15 +205,16 @@ export default class ListChat extends Component {
   };
 
   onEnter = e => {
-    if (e.keyCode === 13) {
+    if (this.state.tmp === "") {
+      alert("Bạn chưa nhập tin nhắn !!!");
+    } else if (e.keyCode === 13) {
       this.onSendMess();
     }
   };
-  onSendMess = () =>{
+  onSendMess = () => {
     this.onClear();
     this.props.callBackMessenger(this.state.tmp);
-
-  }
+  };
   renderListChat = () => {
     console.log(this.props.listChat);
 
@@ -221,7 +236,13 @@ export default class ListChat extends Component {
   };
 
   callBackMessenger = () => {
-    this.props.callBackMessenger(this.state.tmp);
+    if (this.state.tmp === "") {
+      alert("Bạn chưa nhập tin nhắn !!!");
+    } else this.props.callBackMessenger(this.state.tmp);
+
+    this.setState({
+      tmp: ""
+    });
   };
 
   render() {
@@ -243,7 +264,13 @@ export default class ListChat extends Component {
             <h4>{dataUpdate.name}</h4>
             <div className="content_status">
               <p className="nickName">{dataUpdate.userName}</p>
-              <div className="ovalOnline" />
+              <div
+                className="ovalOnline"
+                style={{
+                  backgroundColor:
+                    dataUpdate.isOnline === true ? "#34d859" : "#d0d4da"
+                }}
+              />
               <p className="statusOnline">{dataUpdate.timeActive}</p>
             </div>
           </div>
@@ -253,7 +280,9 @@ export default class ListChat extends Component {
             <div />
           </div>
         </div>
-        <div className="contentChat">{this.renderListChat()}</div>
+        <div className="contentChat" id="customScroll">
+          {this.renderListChat()}
+        </div>
         <div className="sendBox">
           {/* xử lý handleChange */}
           <input

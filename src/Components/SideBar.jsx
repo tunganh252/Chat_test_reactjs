@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 import logo from "./../Assets/images/logo.svg";
-import user1 from "./../Assets/images/img2.jpg";
+import user1 from "./../Assets/images/avatar.png";
 import { dataMenu } from "./../Data/Data.js";
 
 
+
 const SideBarContainer = styled.div`
-  width: 20%;
+  width: 18%;
   z-index: 99;
   .logo {
     height: 7%;
@@ -28,10 +29,14 @@ const SideBarContainer = styled.div`
     height: auto;
     margin: 0 auto;
     padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
       border-radius: 50%;
       width: 120px;
       height: 120px;
+      object-fit: cover;
     }
   }
   .titleUser {
@@ -63,8 +68,8 @@ const SideBarContainer = styled.div`
       line-height: normal;
       letter-spacing: normal;
       color: #fff;
-      opacity: .7;
-      margin:0;
+      opacity: 0.7;
+      margin: 0;
       padding-top: 8px;
     }
   }
@@ -95,9 +100,10 @@ const ItemMenu = styled.div`
     top: 0;
     transition: 0.4s all;
   }
-  &:hover, &:active {
+  &:hover,
+  &:active {
     background-color: #0084c2;
-    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.15);
     &::before {
       width: 4px;
       right: 0%;
@@ -169,44 +175,44 @@ export default class SideBar extends Component {
   };
   render() {
     return (
-      <SideBarContainer>
-        <div className="logo">
-          <div className="blockImg">
-            <img src={logo} alt="logoEximbank" />
+        <SideBarContainer>
+          <div className="logo">
+            <div className="blockImg">
+              <img src={logo} alt="logoEximbank" />
+            </div>
           </div>
-        </div>
-        <div className="user">
-          <div className="blockImg">
-            <img src={user1} alt="User" />
+          <div className="user">
+            <div className="blockImg">
+              <img src={user1} alt="User" />
+            </div>
           </div>
-        </div>
-        <div className="titleUser">
-          <h4>Nguyễn Hoàng Yến</h4>
-          <p>Last login at 12:02 PM - Oct 01, 2018</p>
-        </div>
-        <MenuSideBar>
-          {this.state.itemMenu.map((item, index) => {
-            if (index === 2) {
-              return (
-                <ItemSpecial key={index}>
-                  <div className="settingText">{item.title}</div>
-                  <div className="blockImg">
-                    <img src={item.ic} alt="abc" />
-                  </div>
-                </ItemSpecial>
-              );
-            } else
-              return (
-                <ItemMenu key={index}>
-                  <div className="blockImg">
-                    <img src={item.ic} alt="abc" />
-                  </div>
-                  <div className="settingText">{item.title}</div>
-                </ItemMenu>
-              );
-          })}
-        </MenuSideBar>
-      </SideBarContainer>
+          <div className="titleUser">
+            <h4>Nguyễn Tùng Anh</h4>
+            <p>Last login at 12:02 PM - Oct 01, 2018</p>
+          </div>
+          <MenuSideBar>
+            {this.state.itemMenu.map((item, index) => {
+              if (index === 2) {
+                return (
+                  <ItemSpecial key={index}>
+                    <div className="settingText">{item.title}</div>
+                    <div className="blockImg">
+                      <img src={item.ic} alt="abc" />
+                    </div>
+                  </ItemSpecial>
+                );
+              } else
+                return (
+                    <ItemMenu key={index}>
+                      <div className="blockImg">
+                        <img src={item.ic} alt="abc" />
+                      </div>
+                      <div className="settingText">{item.title}</div>
+                    </ItemMenu>
+                );
+            })}
+          </MenuSideBar>
+        </SideBarContainer>
     );
   }
 }

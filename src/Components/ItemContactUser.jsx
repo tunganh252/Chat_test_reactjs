@@ -65,29 +65,53 @@ const ItemUser = styled.div`
 `;
 export default class ItemContactUser extends Component {
   render() {
-      const {data, index, dataUpdate} = this.props;
+    const { data, index, dataUpdate } = this.props;
     return (
-      <ItemUser 
-      onClick={()=>this.props.callBackDataContact(index)}
-      style = {{
-        backgroundImage: data.name=== dataUpdate.name ? 'linear-gradient(76deg, #f98153, #f45112) ': ''
-      }}
+      <ItemUser
+        onClick={() => this.props.callBackDataContact(index)}
+        style={{
+          backgroundImage:
+            data.name === dataUpdate.name
+              ? "linear-gradient(76deg, #f98153, #f45112) "
+              : ""
+        }}
       >
-      
         <img src={data.img} alt="" />
-        <div className="StatusOval"    style={{
-                    backgroundColor: data.name === dataUpdate.name
-                        ? "#F87B4B"
-                        : "#fff",
-                
-                }} >
-          <div className="oval"  style= {{backgroundColor: data.isOnline === true ? '#34d859': '#d0d4da'}}/>
+        <div
+          className="StatusOval"
+          style={{
+            backgroundColor: data.name === dataUpdate.name ? "#F87B4B" : "#fff"
+          }}
+        >
+          <div
+            className="oval"
+            style={{
+              backgroundColor: data.isOnline === true ? "#34d859" : "#d0d4da"
+            }}
+          />
         </div>
         <div className="content">
-          <h4 style={{color: data.name === dataUpdate.name ?'#fff' :''}}>{data.name}</h4>
-          <p style={{color: data.name === dataUpdate.name ?'#fff' :'#000' , opacity:.7}}>{data.content}</p>
+          <h4 style={{ color: data.name === dataUpdate.name ? "#fff" : "" }}>
+            {data.name}
+          </h4>
+          <p
+            style={{
+              color: data.name === dataUpdate.name ? "#fff" : "#000",
+              opacity: 0.7
+            }}
+          >
+            {data.content}
+          </p>
         </div>
-        <p className="time" style={{color: data.name === dataUpdate.name ?'#fff' :'#000',  opacity:.5}}>{data.time}</p>
+        <p
+          className="time"
+          style={{
+            color: data.name === dataUpdate.name ? "#fff" : "#000",
+            opacity: 0.5
+          }}
+        >
+          {data.time}
+        </p>
       </ItemUser>
     );
   }

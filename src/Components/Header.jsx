@@ -43,8 +43,8 @@ const HeaderContainer = styled.div`
       }
     }
     .triangle {
-      border-left: solid 20px #70c0e4;
-      border-bottom: solid 25px transparent;
+      border-left: solid 30px #70c0e4;
+      border-bottom: solid 27px transparent;
       border-top: solid 25px transparent;
     }
   }

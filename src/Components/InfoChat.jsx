@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import ItemUserTransfer from "./ItemUserTransfer.jsx";
+import InfoUser from "./InfoUser.jsx";
 
 import ic_wee from "./../Assets/images/ic_wee.svg";
 import ic_plus from "./../Assets/images/ic_plus.svg";
 import ic_money from "./../Assets/images/ic_money2.svg";
+import ic_search from "./../Assets/images/ic_search.svg";
 
 const InfoChatContainer = styled.div`
   min-width: 260px;
   height: 100%;
-
+  overflow: hidden;
   .taskLinear1 {
     min-width: 260px;
     height: 2.5%;
@@ -19,10 +22,35 @@ const InfoChatContainer = styled.div`
     height: 2.5%;
     background-image: linear-gradient(87deg, #00a548, #bdd50a);
   }
+
+  .taskLinear1,
+  .taskLinear2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .span1 {
+      width: 28.6px;
+      height: 1.4px;
+      border-top: solid 0.5px#fff;
+    }
+    .span2 {
+      width: 21.4px;
+      height: 1.4px;
+      opacity: 0.81;
+      border-top: solid 0.5px #fff;
+    }
+    .span3 {
+      width: 14.3px;
+      height: 1.4px;
+      opacity: 0.6;
+      border-top: solid 0.5px #fff;
+    }
+  }
 `;
 const InfoTransfer = styled.div`
   width: 100%;
-  height: 47.5%;
+  height: 50%;
   background-image: linear-gradient(
     37deg,
     #9000ff 0%,
@@ -71,7 +99,6 @@ const InfoTransfer = styled.div`
       width: 22px;
       height: 22px;
       object-fit: contain;
-      opacity: 0.5;
       position: absolute;
       right: 25px;
       top: 50%;
@@ -94,30 +121,52 @@ const InfoTransfer = styled.div`
       color: #fff;
       padding: 0px 40px 0 25px;
       text-align: center;
+      &::placeholder {
+        color: #fff;
+      }
+    }
+  }
+  .search {
+    margin: 30px 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ffffff4d;
+    display: flex;
+    img {
+      width: 12px;
+      height: 12px;
+    }
+    input {
+      margin-left: 10px;
+      width: 100%;
+      margin-right: 13px;
+      opacity: 0.5;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      color: #fff;
+      &::placeholder {
+        color: #fff;
+      }
     }
   }
 `;
-const InfoUser = styled.div`
-  width: 100%;
-  height: 47.5%;
-`;
+
 export default class InfoChat extends Component {
-
   state = {
-    numberInput : ''
+    numberInput: ""
+  };
+  // ex: 200,000
+  // format_num =(e)=>{
+  //   let numberConvert = e.target.value;
+  //   console.log(numberConvert);
+  //   return numberConvert.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g)
 
-  }
-
-  format_num =(e)=>{
-    let numberConvert = e.target.value;
-    console.log(numberConvert);
-    return numberConvert.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g)
-    
-    // this.setState({
-    //   [e.target.name]:numberConvert
-    // })
-  }
+  //   // this.setState({
+  //   //   [e.target.name]:numberConvert
+  //   // })
+  // }
   render() {
+    const {dataUpdate} = this.props
     return (
       <InfoChatContainer>
         <InfoTransfer>
@@ -129,16 +178,33 @@ export default class InfoChat extends Component {
             <div className="blockImg">
               <img className="ic_plus" src={ic_plus} alt="asd" />
             </div>
-            <input type="phone" name="numberInput" value={this.state.numberInput}
-            id='idnumber'
-           onKeyPress={(e)=>this.format_num(e)}
+            <input
+              type="phone"
+              name="numberInput"
+              id="idnumber"
+              placeholder="200,000"
+              //  onKeyPress={(e)=>this.format_num(e)}
             />
             <img className="ic_money" src={ic_money} alt="asd" />
           </div>
+          <div className="search">
+            <img src={ic_search} alt="asd" />
+            <input type="text" placeholder="Search name" />
+          </div>
+          <ItemUserTransfer />
         </InfoTransfer>
-        <div className="taskLinear1" />
-        <div className="taskLinear2" />
-        <InfoUser />
+        <div className="taskLinear1">
+          <span className="span1" />
+          <span className="span2" />
+          <span className="span3" />
+        </div>
+        <div className="taskLinear2">
+          <span className="span1" />
+          <span className="span2" />
+          <span className="span3" />
+          <span />
+        </div>
+        <InfoUser dataUpdate={dataUpdate}/>
       </InfoChatContainer>
     );
   }

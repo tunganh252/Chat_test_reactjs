@@ -106,6 +106,22 @@ const ListContactContainer = styled.div`
   .listUser{
     margin-top: 34px;
   }
+  .listContactUser{
+    overflow: scroll;
+    height: 78%;
+  }
+  /* Custom Scroll */
+  .listContactUser::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .listContactUser::-webkit-scrollbar {
+    background-color: transparent;
+  }
+
+  .listContactUser::-webkit-scrollbar-thumb {
+    background-image: transparent;
+  }
 `;
 
 
@@ -133,17 +149,20 @@ export default class ListContact extends Component {
         <div className="listUser">
         </div>
         {/* {this.renderItemContactUser()} */}
+        <div className='listContactUser'>
+
         {listContact.map((item,index) => {
           return (
-          <ItemContactUser
+            <ItemContactUser
             callBackDataContact={callBackDataContact}
             key={index} 
             data={item}
             index={index}
             dataUpdate={dataUpdate}
             
-          />)
-        })}
+            />)
+          })}
+          </div>
       </ListContactContainer>
     );
   }
