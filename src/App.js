@@ -3,15 +3,11 @@ import styled from 'styled-components';
 import Header from './Components/Header'
 import SideBar from './Components/SideBar'
 import Footer from './Components/Footer'
-import MainChat from './Components/MainChat'
-import Home from './Components/Home'
+import MainChat from './Components/Chat/MainChat'
+// import Home from './Components/Home'
 
-
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-  } from 'react-router-dom'
+// import {     BrowserRouter as Router,     Route,     Link,   } from
+// 'react-router-dom'
 
 const AppContainer = styled.div `
   display: flex;
@@ -36,34 +32,16 @@ export default class App extends Component {
 
     render() {
         return (
-            
-    
-
-<Router>
-            {/* <div>
-              <Route path='/chat' component={MainChat} />
-              <Route path='/home' component={Home} />
-            </div> */}
-
-            {/* <ul>
-          <li><Link to='/'>AAA</Link></li>
-          <li><Link to='/chat'>Chat</Link></li>
-          <li><Link to='/home'>Home</Link></li>
-            </ul> */}
             <AppContainer>
-                <SideBar>
-                </SideBar>
+                <SideBar></SideBar>
                 <div className='overlaySideBar'/>
                 <div className='MainContainer'>
                     <Header></Header>
                     <MainChat >
-                        <Route path='/chat' component={MainChat} />
-                        <Route path='/home' component={Home} />
                     </MainChat>
                     <Footer></Footer>
                 </div>
             </AppContainer>
-</Router>
         )
     }
 }
