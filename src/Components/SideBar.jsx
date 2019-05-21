@@ -4,7 +4,7 @@ import styled from "styled-components";
 import logo from "./../Assets/images/logo.svg";
 import user1 from "./../Assets/images/avatar.png";
 import { dataMenu } from "./../Data/Data.js";
-
+import {  Link } from "react-router-dom";
 
 
 const SideBarContainer = styled.div`
@@ -146,6 +146,7 @@ const ItemSpecial = styled.div`
   justify-content: center;
   padding: 16px;
   background-image: linear-gradient(80deg, #9000ff, #005bec);
+  text-decoration:none;
   cursor: pointer;
   .blockImg {
     width: 42px;
@@ -203,12 +204,14 @@ export default class SideBar extends Component {
                 );
               } else
                 return (
-                    <ItemMenu key={index}>
+                  <Link to={item.url} key={index}  style={{textDecoration:'none'}}>
+                    <ItemMenu >
                       <div className="blockImg">
                         <img src={item.ic} alt="abc" />
                       </div>
                       <div className="settingText">{item.title}</div>
                     </ItemMenu>
+                  </Link>
                 );
             })}
           </MenuSideBar>

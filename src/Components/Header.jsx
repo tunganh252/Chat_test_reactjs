@@ -7,10 +7,12 @@ import ic_letter from "./../Assets/images/ic_letter.svg";
 
 const HeaderContainer = styled.div`
   width: 100%;
-  height:7% ;
+  height: 7%;
   display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
+  background-color: #2583b8;
+  box-shadow: 0.2px 0.2px 0px #3c3c3c;
   flex: 1;
   .aaa {
     width: 20%;
@@ -80,7 +82,7 @@ const HeaderContainer = styled.div`
       line-height: normal;
       letter-spacing: 0.5px;
       color: #fff;
-      margin-left: 20px
+      margin-left: 20px;
     }
   }
 `;

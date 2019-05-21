@@ -62,6 +62,7 @@ callBackMessenger = (mess) => {
             callBackMessenger={this.callBackMessenger}
             />
             <InfoChat 
+            dataUser = {this.listContact.dataContact}
             dataUpdate={this.state.listContact}
             />
         </MainChatContainer>

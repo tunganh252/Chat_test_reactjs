@@ -1,9 +1,12 @@
 import React, {Component} from 'react'
 import styled from 'styled-components';
-import Header from './Components/Header'
 import SideBar from './Components/SideBar'
-import Footer from './Components/Footer'
-import MainChat from './Components/Chat/MainChat'
+import MainComponent from './Components/MainComponent'
+
+import { BrowserRouter as Router } from "react-router-dom";
+// import MainChat from './Components/Chat/MainChat';
+// import Home from './Components/Home/Home';
+
 // import Home from './Components/Home'
 
 // import {     BrowserRouter as Router,     Route,     Link,   } from
@@ -24,24 +27,23 @@ const AppContainer = styled.div `
       background-color:#000;
       opacity: .25;
   }
-  .MainContainer{
+  /* .MainContainer{
       width: 82%;
-  }
+  } */
 `
 export default class App extends Component {
 
     render() {
         return (
+            <Router>
             <AppContainer>
                 <SideBar></SideBar>
                 <div className='overlaySideBar'/>
-                <div className='MainContainer'>
-                    <Header></Header>
-                    <MainChat >
-                    </MainChat>
-                    <Footer></Footer>
-                </div>
+
+                
+                <MainComponent/>
             </AppContainer>
+            </Router>
         )
     }
 }

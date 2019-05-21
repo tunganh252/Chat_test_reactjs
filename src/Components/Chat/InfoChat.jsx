@@ -166,7 +166,7 @@ export default class InfoChat extends Component {
   };
 
   render() {
-    const { dataUpdate } = this.props;
+    const { dataUpdate, dataUser} = this.props;
     return (
       <InfoChatContainer>
         <InfoTransfer>
@@ -193,7 +193,9 @@ export default class InfoChat extends Component {
             <input type="text" placeholder="Search name" />
           </div>
           {/*  */}
-          <ItemUserTransfer dataUpdate={dataUpdate} />
+          <ItemUserTransfer
+          dataUser={dataUser}
+          dataUpdate={dataUpdate} />
           {/*  */}
         </InfoTransfer>
         <div className="taskLinear1">
