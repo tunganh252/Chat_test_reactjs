@@ -77,7 +77,7 @@ const RightContainer = styled.div`
     padding: 25px 0 0 15px;
     margin-top: 20px;
     width: 95%;
-    height: 165px;
+    height: 173px;
     border-radius: 5px;
     opacity: 0.85;
     background-image: linear-gradient(to top, #000f2f, #00385c);

@@ -6,6 +6,7 @@ import img_eye from "./../../Assets/images/ic-invisible-copy.svg";
 import ic_plus from "./../../Assets/images/group-7.svg";
 import RightContent from "./RightContent";
 import UserScroll from "./UserScroll";
+import banner from'./../../Assets/images/banner1.jpg'
 
 const TopHomeContainer = styled.div`
   min-height: 45.35%;
@@ -83,7 +84,7 @@ const TopHomeContainer = styled.div`
       }
     }
     .blockBanner {
-      background-image: url(/static/media/banner1.c6ce4bbb.jpg);
+      background-image: url(${banner});
       background-repeat: no-repeat, repeat;
       background-position: center center;
       background-size: cover;
@@ -99,7 +100,7 @@ const TopHomeContainer = styled.div`
         margin-right:5px;
         width: 80px;
         height: 80px;
-        border-radius: 10px;
+        border-radius: 5px;
         background-color: #ffffff;
         display: flex;
         justify-content: center;
@@ -123,7 +124,6 @@ const TopHomeContainer = styled.div`
 export default class HomeContent extends Component {
   renderUser = () => {
     let { dataUser } = this.props;
-    console.log(dataUser);
 
     return dataUser.map((item, index) => {
       return <UserScroll key={index} itemUser={item} />;

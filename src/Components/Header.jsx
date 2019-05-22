@@ -4,6 +4,7 @@ import styled from "styled-components";
 import ic_chat from "./../Assets/images/ic_chat.svg";
 import ic_payment from "./../Assets/images/ic_payment1.svg";
 import ic_letter from "./../Assets/images/ic_letter.svg";
+import {dataMenu} from './../Data/Data'
 
 const HeaderContainer = styled.div`
   width: 100%;
@@ -45,9 +46,10 @@ const HeaderContainer = styled.div`
       }
     }
     .triangle {
-      border-left: solid 30px #70c0e4;
-      border-bottom: solid 27px transparent;
-      border-top: solid 25px transparent;
+      background-color: #70c0e4;
+      -webkit-clip-path: polygon(0 0, 0 100%, 98% 50%);
+      clip-path: polygon(0 0, 0 100%, 98% 50%);
+      width: 30px;
     }
   }
   .customer {
@@ -107,6 +109,13 @@ const BlockImg = styled.div`
 `;
 
 export default class Header extends Component {
+
+state = {
+  dataMenu: dataMenu,
+  pathName: window.location.pathname
+}
+
+
   render() {
     return (
       <HeaderContainer>
